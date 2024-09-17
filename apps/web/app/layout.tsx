@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { fontBody, fontHeading } from "./fonts";
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,10 +14,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-      <body>
+      <body className={`${fontBody.variable} ${fontHeading.variable} antialiased bg-black text-white`}>
+        <Header />
         {children}
+         <Footer />
       </body>
     </html>
   );
